@@ -34,6 +34,8 @@ def connect_to_database(max_retries: int = 3, retry_delay: int = 2):
                 connectTimeoutMS=10000,
                 maxPoolSize=50,
                 minPoolSize=10,
+                tls=True,
+                tlsAllowInvalidCertificates=True,  # Fix for SSL handshake issues on some platforms
             )
             
             # Test the connection
