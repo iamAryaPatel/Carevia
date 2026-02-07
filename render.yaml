@@ -1,0 +1,30 @@
+# render.yaml - Render Blueprint for Easy Deployment
+
+services:
+  # Backend Service
+  - type: web
+    name: carevia-backend
+    env: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    envVars:
+      - key: MONGO_URI
+        sync: false
+      - key: ENVIRONMENT
+        value: production
+      - key: API_VERSION
+        value: v1
+      - key: ALLOWED_ORIGINS
+        value: "*"
+      - key: LOG_LEVEL
+        value: INFO
+
+  # Frontend Service
+  - type: web
+    name: carevia-frontend
+    env: docker
+    dockerfilePath: ./frontend/frontend/Dockerfile
+    dockerContext: ./frontend/frontend
+    envVars:
+      - key: VITE_API_URL
+        sync: false
