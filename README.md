@@ -1,4 +1,4 @@
-# Carevia - Job Aggregator Platform
+# Carevia - Job Aggregator Platforms
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
